@@ -1,0 +1,86 @@
+#Introduction to Object Oriented Programming (OOP) in Python
+'''
+
+1. Object Oriented Programming:
+    OOP is a programming paradigm that organize code into obkects.
+    Objects have both data(attributes) and behavior(methods)
+    associated to them.
+
+2. Class:
+    A class is a blueprint for creating objects. It defines
+    the structure and behavior that its
+    instances(objects) will have.
+
+3. Object:
+    An instance of a class, representing a specitic entity
+    in the program.
+4.) Method:
+  - A function defined inside a class that operates on objects of that class
+5.) Attribute:
+- variable that is associated with an object (an instance of a class). Attributes hold data or state information about the object
+
+Explain classes and objects using an everyday example:
+Imagine you have a blueprint for a house. The blueprint is the class, and the houses you build from the blueprint are objects. Each house is built from the same blueprint but can have different features (color, furniture, etc.).
+
+Introduce Key Concepts:
+Class: The blueprint or template.
+Object: An instance of a class. It's like creating one house from the blueprint.
+Attributes: Characteristics of an object (like the color or size of a house).
+Methods: Actions an object can perform (like opening the door or turning on the lights in a house).
+'''
+# Sample Code #1 
+
+class Dog: <-- Class 
+    def __init__(self, name, breed): << a way of storing attributes that describe the class, to set up default values or starting configurations for attributes that the object might need, 
+You don't need to call __init__() manually. When you create an instance of a class, Python automatically calls __init__() to initialize the new object.
+# if not init is called out, then python with automatically generate a default one for you
+        self.name = name <--- Attributes // SELF MEANS INSTANCE OF THE CLASS ITSELF
+
+        self.breed = breed <-- Attributes
+
+    def bark(self): << method or action 
+        print(f"{self.name} says woof!")
+
+# Create an object (dog) from the class
+my_dog = Dog("Buddy", "Golden Retriever") <<< basically creates a use out of the object in a practical sense, Class becomes an object when you attach attributes to it CALLED AN INSTANCE 
+my_dog.bark()  # Outputs: Buddy says woof! << calling the method using an instance 
+
+#Sample Code  #2 
+
+class Book:
+    def __init__(self,title,author,pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def display_info(self):
+        print(f"Title: {self.title} , Author: {self.author},Pages: {self.pages}")
+        
+
+#First book
+book1 = Book("Python Advanced","Estevan",1)
+book2 = Book("Python Basic", "Estevan", 2)
+book3 = Book("Python Int.","Estevan",3)
+book4 = Book("Python baby edition", "Estevan", 5)
+book5 = Book("Python Elders","Estevan",0)
+
+
+# Show info of my books
+book1.display_info()
+book2.display_info()
+book3.display_info()
+book4.display_info()
+book5.display_info()
+
+
+library = [book1,book2,book3,book4,book5]
+
+for i in library:
+    i.display_info()
+
+#Challenge Code:
+
+# Using what you know so far about Classes and objects, Create a class and object for something you like 
+
+# Example: 
+- Create a Car class with attributes like make, model, and year, and methods like drive() and honk().
